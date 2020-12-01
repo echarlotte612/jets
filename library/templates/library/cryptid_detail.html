@@ -14,11 +14,11 @@
 <br>
 <br><h2>Known locations are:</h2>
 
-{% for location in locations %}
+{% for location in cryptid.location_set.all %}
     <h3> {{ location.name }} </h3>
 {% endfor %}
 <br>
-{% for sighting in sightings %}
+{% for sighting in cryptid.sighting_set.all %}
     <h2> {{ sighting.date }}, {{ sighting.location }} </h2> 
     <br>
     <p>{{ sighting.report }}</p> 
