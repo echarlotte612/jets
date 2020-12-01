@@ -1,11 +1,14 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import Cryptid, Location, Sighting
 
 def index(request):
     return HttpResponse('Hello!')
 
 def cryptids(request):
-    return HttpResponse('Cryptids')
+    context = {'cryptids': Cryptid.objects.all()}
+    return render(request, 'library/cryptids.html', context)
+  
 
 def cryptid_detail(request, cryptid_id):
     return HttpResponse('Cryptid detail')
@@ -23,4 +26,4 @@ def location_sightings(request, location_id):
     return HttpResponse('location sightings')
 
 
-# Create your views here.
+
