@@ -11,7 +11,11 @@ def cryptids(request):
   
 
 def cryptid_detail(request, cryptid_id):
-    return HttpResponse('Cryptid detail')
+    context = {'cryptid': Cryptid.objects.get(pk=cryptid_id), 
+        'locations': Location.objects.filter(cryptid__pk=cryptid_id),
+        'sightings': Sighting.objects.filter(cryptid__pk=cryptid_id)
+        }
+    return render(request, 'library/cryptid_detail.html', context)
 
 def cryptid_sightings(request, cryptid_id):
     return HttpResponse('Cryptid sightings')
