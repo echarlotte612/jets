@@ -12,6 +12,7 @@ class Cryptid(models.Model):
 class Location(models.Model):
     cryptid = models.ForeignKey(Cryptid, on_delete = models.CASCADE)
     name = models.CharField(max_length=200)
+    continent = models.CharField(max_length=16)
     def __str__(self):
         return f"{self.name}"
 
