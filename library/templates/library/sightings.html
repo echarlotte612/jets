@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block CSS %} {% endblock %}
+{% block title %}Sightings{% endblock %}
+{% block content %}
+
+{% if type == 'year' %}
+    <h1>{{ date.year }}</h1>
+{% elif type == 'month' %}
+    <h1>{{ date|date:'F Y' }}</h1>
+{% else %}
+    <h1>{{ date|date:'jS F Y' }}</h1>
+{% endif %}
+
+
+{% for sighting in sightings %} 
+        {{ sighting.date }}: {{ sighting.location }}<br>
+        {{ sighting.cryptid.name }}<br>
+        {{ sighting.report }}
+{% empty %}
+    <p>No sightings for this date</p>
+{% endfor %}
+
+{% endblock %}
