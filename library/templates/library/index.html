@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}HomePage{% endblock %}
+{% block content %}
+<div class = "homePage">
+    <img class="logo" src="{% static 'library/descryptid.png' %}">
+    <h3>All the information, locations, sightings & hairiness of your favourite cryptids!</h3>
+    <a href="{% url 'cryptids' %}"><button>View The Cryptids</button></a>
+</div>
+{% endblock %}
