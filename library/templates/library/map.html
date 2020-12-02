@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block CSS %}<link rel="stylesheet" href="{% static 'library/map.css' %}">{% endblock %}
+{% block title %}World Map{% endblock %}
+{% block content %}
+
+<h1>LOCATIONS PAGE</h1>
+<!-- {% for cryptid in cryptids %}
+    <a href = "{% url 'cryptid_detail' cryptid.id %}">
+        {{ cryptid.name }}
+    </a><br>
+    <img src = '{{ cryptid.image.url }}'>
+    <br>
+
+    {% for tag in cryptid.tags.all %}
+        {{ tag.name }}
+    {% endfor %}
+    <br>
+
+{% empty %}
+    <p>No cryptids</p>
+{% endfor %} -->
+<div id="map-continents">
+    <ul class="continents">
+     <li class="c1"><a href="#africa">Africa</a></li>
+     <li class="c2"><a href="#asia">Asia</a></li>
+     <li class="c3"><a href="#australia">Australia</a></li>
+     <li class="c4"><a href="#europe">Europe</a></li>
+     <li class="c5"><a href="#north-america">North America</a></li>
+     <li class="c6"><a href="#south-america">South America</a></li>
+    </ul>
+</div>
+<div class="map"> 
+    <!-- <img class="world" src="{% static 'library/world-grey.png' %}"> -->
+    <img class="africa" src="{% static 'library/africa-grey.png' %}" title="Africa">
+    <img class="europe" src="{% static 'library/europe-grey.png' %}" title="Europe">
+    <img class="asia" src="{% static 'library/asia-grey.png' %}" title="Asia">
+    <img class="northamerica" src="{% static 'library/northamerica-grey.png' %}" title="North America">
+    <img class="southamerica" src="{% static 'library/southamerica-grey.png' %}" title="South America">
+    <img class="australia" src="{% static 'library/australia-grey.png' %}" title="Australia">
+</div>
+
+{% endblock %}<!---end body-->
