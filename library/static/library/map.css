@@ -1,0 +1,75 @@
+.map {
+    width: 100vw;
+    overflow: hidden;
+    margin: 0 auto;
+}
+.world {
+    opacity: 50%;
+}
+
+.africa {
+    position: fixed;
+    right: 53vw;
+    top: 57.4vh;
+    z-index: 3;
+    width: 13.8%;
+}
+.africa:hover {
+    filter: contrast(100%) hue-rotate(200deg) saturate(530%);
+    cursor: pointer;
+}
+.europe {
+    position: fixed;
+    right: 52.6vw;
+    top: 28.4vh;
+    z-index: 2;
+    width: 14.7%;
+}
+.europe:hover {
+    filter: contrast(100%) hue-rotate(200deg) saturate(530%);
+    cursor: pointer;
+}
+.asia {
+    position: fixed;
+    right: 33.1vw;
+    top: 27vh;
+    z-index: 1;
+    width: 25.6%;
+}
+.asia:hover {
+    filter: contrast(100%) hue-rotate(200deg) saturate(530%);
+    cursor: pointer;
+}
+.northamerica {
+    position: fixed;
+    left: 3vw;
+    top: 25.5vh;
+    z-index: 5;
+    width: 31.7%;
+}
+.northamerica:hover{
+    filter: contrast(100%) hue-rotate(200deg) saturate(530%);
+    cursor: pointer;
+}
+
+.southamerica {
+    position: fixed;
+    left: 20vw;
+    top: 67.5vh;
+    z-index: 5;
+    width: 9.2%;
+}
+.southamerica:hover {
+    filter: contrast(100%) hue-rotate(200deg) saturate(530%);
+    cursor: pointer;
+}
+.australia {
+    position: fixed;
+    right: 25.8vw;
+    top: 66.5vh;
+    width: 16%;
+}
+.australia:hover {
+    filter: contrast(100%) hue-rotate(200deg) saturate(530%);
+    cursor: pointer;
+}

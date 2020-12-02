@@ -28,7 +28,8 @@ def cryptid_tags(request, tag):
     return render(request, 'library/cryptids.html', context)
 
 def locations(request):
-    return HttpResponse('locations')
+    context = {'locations': Location.objects.all()}
+    return render(request, 'library/map.html', context)
 
 def location_detail(request, location_id):
     return HttpResponse('location details')
@@ -47,6 +48,8 @@ def sightings_year_month(request, year, month):
 def sightings_year_month_day(request, year, month, day):
     context = {'sightings': Sighting.objects.filter(date__year = year).filter(date__month = month).filter(date__day = day),'date': date(year, month, day), 'type': 'day'}
     return render(request, 'library/sightings.html', context)
+
+
 
 
 
