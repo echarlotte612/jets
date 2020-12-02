@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block CSS %} {% endblock %}
+{% block title %}Continent Sightings{% endblock %}
+{% block content %}
+
+<h1>{{ location.continent }}</h1>
+{{ cryptid.name }}
+
+{% for sighting in sightings %}
+    <h1>{{ sighting.location.continent }}</h1>
+    <!-- <a href = "{% url 'sightings_continent' sighting.id %}"></a> -->
+    <h1>Location: {{ sighting.location }}</h1>
+    <h2>{{ sighting.cryptid.name }}</h2>
+    <h3>{{ sighting.date }}</h3>
+    <p>{{ sighting.report }}</p>
+{% empty %}
+    <p>No sightings yet</p>
+{% endfor %}
+
+{% endblock %}
