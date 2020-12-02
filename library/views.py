@@ -19,6 +19,10 @@ def cryptid_detail(request, cryptid_id):
 def cryptid_sightings(request, cryptid_id):
     return HttpResponse('Cryptid sightings')
 
+def cryptid_tags(request, tag):
+    context = {'cryptids': Cryptid.objects.filter(tags__name__in = [tag])}
+    return render(request, 'library/cryptids.html', context)
+
 def locations(request):
     return HttpResponse('locations')
 
