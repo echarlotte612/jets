@@ -1,0 +1,1 @@
+web: gunicorn cryptids.wsgi --log-file -
