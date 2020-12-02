@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block CSS %} {% endblock %}
+{% block title %}Tags{% endblock %}
+{% block content %}
+
+<div class = 'cryptids-wrapper'>
+    {% for cryptid in cryptids %}
+        <div class = 'cryptid-item'>
+            <a href = "{% url 'cryptid_detail' cryptid.id %}">
+                {{ cryptid.name }}
+            <br>
+            <img src = '{{ cryptid.image.url }}' alt = '{{ cryptid.name }}' class = 'cryptid-image'>
+            <br>
+            </a>
+            <div class = 'tags'>
+            {% for tag in cryptid.tags.all %}
+                <h5 class = 'tag-name'>{{ tag.name }}</h5>
+            {% endfor %}
+            </div>
+        </div>
+        <br>
+    {% empty %}
+        <p>No cryptids</p>
+    {% endfor %}
+    </div>
+
+{% endblock %}

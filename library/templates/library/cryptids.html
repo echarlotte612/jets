@@ -15,7 +15,9 @@
         </a>
         <div class = 'tags'>
         {% for tag in cryptid.tags.all %}
+        <a href = "{% url 'cryptid_tags' tag.name %}">
             <h5 class = 'tag-name'>{{ tag.name }}</h5>
+        </a>
         {% endfor %}
         </div>
     </div>
