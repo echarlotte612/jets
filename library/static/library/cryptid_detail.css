@@ -1,11 +1,10 @@
 .title{
     text-align: center;
+    text-decoration: underline;
 }
-body {
+.cryptid_detail_wrapper{
     margin-left: 10vh;
     margin-right: 10vh;
-    background-color: rgb(25, 25, 49);
-    color: white;
 }
 .cryptid_detail_image {
     height: auto;
@@ -33,4 +32,7 @@ body {
 }
 a:hover {
     opacity: 0.75;
+}
+a {
+    text-decoration: none;
 }
