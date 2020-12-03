@@ -23,9 +23,6 @@
     flex-wrap: wrap;
     justify-content: center;
 }
-.tag-border{
-    margin-right: 1%;
-}
 .tag-name {
     background-color: white;
     color: rgb(25, 25, 49);
@@ -35,4 +32,21 @@
     text-align: center;
     margin: 1%;
     place-self: center;
+}
+
+body {
+    background-color: rgb(25, 25, 49);
+    color: white;
+}
+
+a {
+    color: white;
+    cursor: pointer;
+}
+a:hover {
+    opacity: 0.75;
+}
+.cryptid-Name {
+    font-size: 4.3vh;
+    text-decoration: none;
 }
