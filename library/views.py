@@ -1,22 +1,30 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseNotFound
 from .models import Cryptid, Location, Sighting
 from datetime import date
 
 def index(request):
-    return HttpResponse('Hello!')
+    return render(request, 'library/index.html')
 
 def cryptids(request):
     context = {'cryptids': Cryptid.objects.all()}
     return render(request, 'library/cryptids.html', context)
 
 def cryptid_detail(request, cryptid_id):
-    context = {'cryptid': Cryptid.objects.get(pk=cryptid_id)
+    try:
+        context = {'cryptid': Cryptid.objects.get(pk=cryptid_id)
         }
+    except Cryptid.DoesNotExist:
+        return render(request, 'library/404.html')
+    
     return render(request, 'library/cryptid_detail.html', context)
 
 def cryptid_sightings(request, cryptid_id):
     return HttpResponse('Cryptid sightings')
+
+def cryptid_tags(request, tag):
+    context = {'cryptids': Cryptid.objects.filter(tags__name__in = [tag])}
+    return render(request, 'library/cryptids.html', context)
 
 def locations(request):
     context = {'locations': Location.objects.all()}

@@ -1,0 +1,48 @@
+.cryptids-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.cryptid-item {
+    text-align: center;
+    height: auto;
+    flex: 1 1 1;
+    flex-direction: row;
+    padding: 1%;
+    max-width: 25vw;
+    min-width: 25vw;
+}
+
+.cryptid-image {
+    max-width: 25vw;
+    min-width: 25vw;
+    filter: grayscale();
+}
+.tags {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+   
+}
+.tag-name {
+    background-color: white;
+    color: rgb(25, 25, 49);
+    width: 5vw;
+    border-radius: 1em;
+    padding: 2%;
+    text-align: center;
+    margin: 1%;
+    place-self: center;
+}
+
+body {
+    background-color: rgb(25, 25, 49);
+    color: white;
+}
+
+a {
+
+    color: white;
+}
