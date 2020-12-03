@@ -31,7 +31,13 @@ def locations(request):
     return render(request, 'library/map.html', context)
 
 def location_detail(request, location_id):
-    return HttpResponse('location details')
+    try:
+        context = {'location': Location.objects.get(pk=location_id)
+        }
+    except Location.DoesNotExist:
+        return render(request, 'library/404.html')
+    
+    return render(request, 'library/location_detail.html', context)
 
 def sightings_continent(request, continent):
     context = {
