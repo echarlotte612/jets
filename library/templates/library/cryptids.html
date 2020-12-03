@@ -7,7 +7,7 @@
 <div class = 'cryptids-wrapper'>
 {% for cryptid in cryptids %}
     <div class = 'cryptid-item'>
-        <a href = "{% url 'cryptid_detail' cryptid.id %}">
+        <a href = "{% url 'cryptid_detail' cryptid.id %}" class = "cryptid-name">
             {{ cryptid.name }}
         <br>
         <img src = '{{ cryptid.image.url }}' alt = '{{ cryptid.name }}' class = 'cryptid-image'>

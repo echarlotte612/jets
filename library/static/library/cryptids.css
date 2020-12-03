@@ -3,20 +3,22 @@
     flex-wrap: wrap;
     justify-content: center;
 }
-
 .cryptid-item {
     text-align: center;
     height: auto;
     flex: 1 1 1;
     flex-direction: row;
     padding: 1%;
-    max-width: 25vw;
-    min-width: 25vw;
+    max-width: 20vw;
+    min-width: 20vw;
 }
-
+.cryptid-name {
+    font-size: 4vh;
+    text-decoration: none;
+}
 .cryptid-image {
-    max-width: 25vw;
-    min-width: 25vw;
+    max-width: 20vw;
+    min-width: 20vw;
     filter: grayscale();
 }
 .tags {
@@ -24,7 +26,6 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-   
 }
 .tag-name {
     background-color: white;
@@ -37,12 +38,14 @@
     place-self: center;
 }
 
-body {
+body{
     background-color: rgb(25, 25, 49);
     color: white;
 }
-
-a {
-
+a{
     color: white;
+    cursor: url('./cyanPointer.png'), auto;
+}
+a:hover {
+    opacity: 0.75;
 }

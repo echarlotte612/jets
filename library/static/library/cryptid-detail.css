@@ -1,0 +1,13 @@
+.cryptid_detail-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.cryptid_detail_image {
+    height: auto;
+    width: 20vw;
+}
+body {
+    background-color: rgb(25, 25, 49);
+    color: white;
+}

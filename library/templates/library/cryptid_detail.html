@@ -1,29 +1,29 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block CSS %}<link rel="stylesheet" href="{% static 'library/cryptid.css' %}">{% endblock %}
+{% block CSS %}<link rel="stylesheet" href="{% static 'library/cryptid-detail.css' %}">{% endblock %}
 {% block title %}Cryptid{% endblock %}
 {% block content %}
 
 
-
-<h1>{{ cryptid.name }}</h1>
-<br>
-<img src = '{{ cryptid.image.url }}' alt= '{{ cryptid.name }}' class = 'cryptid_detail_image'>
-<br>
-<p>{{ cryptid.description }}</p>
-<br>
-<br><h2>Known locations are:</h2>
-
-{% for location in cryptid.location_set.all %}
-    <h3> {{ location.name }} </h3>
-{% endfor %}
-<br>
-{% for sighting in cryptid.sighting_set.all %}
-    <h2> {{ sighting.date }}, {{ sighting.location }} </h2> 
-    <br>
-    <p>{{ sighting.report }}</p> 
-    <br>
-{% endfor %}
+<div class ="cryptid_detail-wrapper">
+    <h1>{{ cryptid.name }}</h1>
+    <div class ="cryptid-description">
+        <img src = '{{ cryptid.image.url }}' alt= '{{ cryptid.name }}' class = 'cryptid_detail_image'>
+        <p>{{ cryptid.description }}</p>
+        <br>
+        <br><h2>Known locations are:</h2>
+        {% for location in cryptid.location_set.all %}
+            <h3> {{ location.name }} </h3>
+        {% endfor %}
+        <br>
+        {% for sighting in cryptid.sighting_set.all %}
+            <h2> {{ sighting.date }}, {{ sighting.location }} </h2> 
+            <br>
+            <p>{{ sighting.report }}</p> 
+            <br>
+        {% endfor %}
+    </div> 
+</div>
 
 <br>
 {% for tag in cryptid.tags.all %}
