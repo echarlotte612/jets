@@ -5,7 +5,7 @@
 {% block content %}
 
 
-<div class ="cryptid_detail-wrapper">
+<div class ="cryptid_detail_wrapper">
     <h1 class ="title">{{ cryptid.name }}</h1>
     <div class ="cryptid-description">
         <img src = '{{ cryptid.image.url }}' alt= '{{ cryptid.name }}' class = 'cryptid_detail_image'>
@@ -20,11 +20,12 @@
         </div>
         <br><h2>Known Locations Are:</h2>
         {% for location in cryptid.location_set.all %}
-            <h3> {{ location.name }} </h3>
+            <a href = "{% url 'location_detail' location.id %}"><h3> {{ location.name }} </h3></a>
         {% endfor %}
         <br><h2>Reported Sightings:</h2>
         {% for sighting in cryptid.sighting_set.all %}
-            <h2> {{ sighting.date }}, {{ sighting.location }} </h2> 
+            <a href = "{% url 'sightings_year' sighting.date.year %}"><h2>{{ sighting.date }}</h2></a> 
+            <a href = "{% url 'location_detail' sighting.location.id %}"><h2>{{ sighting.location }}</h2></a>
             <p>{{ sighting.report }}</p> 
         {% endfor %}
     </div> 

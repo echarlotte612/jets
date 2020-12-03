@@ -5,7 +5,7 @@
 {% block content %}
 <div class="main-map-page">
     <div class="map-header">
-        <h1>Map of Sightings</h1>
+        <h1 class="map-title">Map of Sightings</h1>
         <p>Select a continent to see all cryptid sightings reported there!</p>
     </div>
     <div class="map">
@@ -27,6 +27,9 @@
         </a>
         <a href = "{% url 'sightings_continent' 'Australia' %}">
             <img class="australia" src="{% static 'library/australia-grey.png' %}" title="Australia">
+        </a>
+        <a href = "{% url 'sightings_continent' 'Far Far Away' %}">
+            <img class="farfaraway" src="{% static 'library/shrekmap.png' %}" title="Far Far Away">
         </a>
     </div>
 </div>

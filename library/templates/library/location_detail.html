@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block CSS %}
+<link rel="stylesheet" href="{% static 'library/location_detail.css' %}">
+{% endblock %}
+{% block title %}DeCryptid | {{location.name}} {% endblock %}
+{% block content %}
+
+
+<div class ="location-detail-wrapper">
+    <h1 class ="location-detail-title">All Cryptid Sightings In {{ location.name }}</h1>
+    <div class ="location-description">
+        {% for sighting in location.sighting_set.all %}
+            <div class="location-card">
+                <a href = "{% url 'sightings_year' sighting.date.year %}"><h2> {{ sighting.date }}</h2></a>
+                <a href = "{% url 'cryptid_detail' sighting.cryptid.id %}"><h2>{{ sighting.cryptid.name }}</h2></a>
+                <img src = '{{ sighting.cryptid.image.url }}' alt= '{{ sighting.cryptid.name }}' class = 'location_detail_image'>
+                <p>{{ sighting.report }}</p> 
+            </div>
+        {% endfor %}
+    </div> 
+</div>
+<br>
+
+{% endblock %}

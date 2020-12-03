@@ -1,43 +1,44 @@
 body {
     margin: 0 auto;
     box-sizing: border-box;
+    background-color: rgb(25, 25, 49);
+    color: white;
 }
 .map-header {
     text-align: center;
 }
-
 /*MAP DIV CONTAINER*/
 .map {
     width: 90vw;
     height: 80vh;
     overflow: hidden;
 }
+.map-title{
+    margin-top: 75px;
+}
 /*TEMPLATE*/
 .world {
     margin: 0 auto;
     opacity: 50%;
 }
-
 /*TOP 3*/
 .europe {
     position: fixed;
-    right: 52.6vw;
+    right: 41.6vw;
     top: 14vw;
     z-index: 5;
     width: 14.7%;
 }
-
 .asia {
     position: fixed;
-    right: 33vw;
+    right: 22vw;
     top: 13.4vw;
     z-index: 1;
     width: 25.6%;
 }
-
 .northamerica {
     position: fixed;
-    right: 64.7vw;
+    right: 54.7vw;
     top: 12.6vw;
     z-index: 2;
     width: 31.7%;
@@ -45,29 +46,40 @@ body {
 /*BOTTOM 3*/
 .africa {
     position: fixed;
-    right: 53vw;
-    top: 28.4vw;
+    right: 42vw;
+    top: 28.35vw;
     z-index: 3;
     width: 13.8%;
 }
-
 .southamerica {
     position: fixed;
-    right: 70vw;
+    right: 60vw;
     top: 33.2vw;
     z-index: 5;
     width: 9.2%;
 }
-
 .australia {
     position: fixed;
-    right: 25.97vw;
-    top: 32.8vw;
+    right: 14.5vw;
+    top: 32.9vw;
     width: 16%;
+}
+.farfaraway {
+    filter: grayscale(100%) blur(0.4px);
+    position: fixed;
+    right: 86.97vw;
+    top: 37.8vw;
+    width: 12%;
+    transition: 1s ease-out;
 }
 
 /*INTERACTIONS - HOVER */
 .europe:hover, .asia:hover, .northamerica:hover, .africa:hover, .southamerica:hover, .australia:hover {
-    filter: contrast(100%) hue-rotate(200deg) saturate(530%);
+    filter: contrast(200%) hue-rotate(85deg) saturate(750%) brightness(60%);
     cursor: pointer;
+}
+.farfaraway:hover {
+    cursor: pointer;
+    filter: grayscale(10%);
+    transform: scale(1.1);
 }
