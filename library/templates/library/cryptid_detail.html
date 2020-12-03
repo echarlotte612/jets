@@ -1,37 +1,34 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block CSS %}<link rel="stylesheet" href="{% static 'library/cryptid-detail.css' %}">{% endblock %}
+{% block CSS %}<link rel="stylesheet" href="{% static 'library/cryptid_detail.css' %}">{% endblock %}
 {% block title %}Cryptid{% endblock %}
 {% block content %}
 
 
 <div class ="cryptid_detail-wrapper">
-    <h1>{{ cryptid.name }}</h1>
+    <h1 class ="title">{{ cryptid.name }}</h1>
     <div class ="cryptid-description">
         <img src = '{{ cryptid.image.url }}' alt= '{{ cryptid.name }}' class = 'cryptid_detail_image'>
+        <h2>Description</h2>
         <p>{{ cryptid.description }}</p>
-        <br>
-        <br><h2>Known locations are:</h2>
+        <div class = 'tags'>
+            {% for tag in cryptid.tags.all %}
+            <a class = "tag-border" href = "{% url 'cryptid_tags' tag.name %}">
+                <h5 class = 'tag-name'>{{ tag.name }}</h5>
+            </a>
+            {% endfor %}
+        </div>
+        <br><h2>Known Locations Are:</h2>
         {% for location in cryptid.location_set.all %}
             <h3> {{ location.name }} </h3>
         {% endfor %}
-        <br>
+        <br><h2>Reported Sightings:</h2>
         {% for sighting in cryptid.sighting_set.all %}
             <h2> {{ sighting.date }}, {{ sighting.location }} </h2> 
-            <br>
             <p>{{ sighting.report }}</p> 
-            <br>
         {% endfor %}
     </div> 
 </div>
-
 <br>
-{% for tag in cryptid.tags.all %}
-    <h5>{{ tag.name }}</h5>
-{% endfor %}
-
-<br>
-
-
 
 {% endblock %}

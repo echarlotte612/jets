@@ -12,10 +12,6 @@
     max-width: 20vw;
     min-width: 20vw;
 }
-.cryptid-name {
-    font-size: 4vh;
-    text-decoration: none;
-}
 .cryptid-image {
     max-width: 20vw;
     min-width: 20vw;
@@ -38,14 +34,19 @@
     place-self: center;
 }
 
-body{
+body {
     background-color: rgb(25, 25, 49);
     color: white;
 }
-a{
+
+a {
     color: white;
-    cursor: url('./cyanPointer.png'), auto;
+    cursor: pointer;
 }
 a:hover {
     opacity: 0.75;
+}
+.cryptid-Name {
+    font-size: 4.3vh;
+    text-decoration: none;
 }

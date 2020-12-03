@@ -1,0 +1,36 @@
+.title{
+    text-align: center;
+}
+body {
+    margin-left: 10vh;
+    margin-right: 10vh;
+    background-color: rgb(25, 25, 49);
+    color: white;
+}
+.cryptid_detail_image {
+    height: auto;
+    width: 20vw;
+    float: left;
+    margin-right: 1%;
+}
+.tags {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.tag-border{
+    margin-right: 1%;
+}
+.tag-name {
+    background-color: white;
+    color: rgb(25, 25, 49);
+    width: 5vw;
+    border-radius: 1em;
+    padding: 2%;
+    text-align: center;
+    margin: 0;
+    place-self: center;
+}
+a:hover {
+    opacity: 0.75;
+}
