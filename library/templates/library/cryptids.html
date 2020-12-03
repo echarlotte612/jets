@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block CSS %} <link rel="stylesheet" href="{% static 'library/cryptids.css' %}">{% endblock %}
-{% block title %}Cryptids{% endblock %}
+{% block title %}DeCryptid | Cryptids{% endblock %}z
 {% block content %}
 
 <div class = 'cryptids-wrapper'>
@@ -9,16 +9,15 @@
     <div class = 'cryptid-item'>
         <a href = "{% url 'cryptid_detail' cryptid.id %}">
             {{ cryptid.name }}
-        <br>
-        <img src = '{{ cryptid.image.url }}' alt = '{{ cryptid.name }}' class = 'cryptid-image'>
-        <br>
+            <img src = '{{ cryptid.image.url }}' alt = '{{ cryptid.name }}' class = 'cryptid-image'>
+            <br>
         </a>
         <div class = 'tags'>
         {% for tag in cryptid.tags.all %}
-        <a href = "{% url 'cryptid_tags' tag.name %}">
-            <h5 class = 'tag-name'>{{ tag.name }}</h5>
-        </a>
-        {% endfor %}
+            <a class = "tag-border" href = "{% url 'cryptid_tags' tag.name %}">
+                <h5 class = 'tag-name'>{{ tag.name }}</h5>
+            </a>
+            {% endfor %}
         </div>
     </div>
     <br>

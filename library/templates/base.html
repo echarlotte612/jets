@@ -5,10 +5,36 @@
     <link rel="stylesheet" href="{% static 'library/app.css' %}">
     {% block CSS %}{% endblock %}
     <title>{% block title %}{% endblock %}</title>
-    
+    {% block icon %}<link rel = "icon" href =  "{% static 'library/decryptid-title.png' %}" type = "image/x-icon">{% endblock %}
+       
 </head>
 <body>
-    {% block content %}{% endblock %}
+    {% block navbar %}
+    {% block navstyle %}<link rel="stylesheet" href="{% static 'library/nav.css' %}">{% endblock %}
+    <nav>
+        <div class="nav-home">
+            <a href="{% url 'index' %}">
+                <img class="nav-img" src="{% static 'library/decryptid-title.png' %}">
+            </a>
+        </div>
+        <div class="nav-pages">
+            <a href="{% url 'cryptids' %}">
+                <h1>All Cryptids</h1>
+            </a>
+            <a href="{% url 'locations' %}">
+                <h1>Cryptid Map</h1>
+            </a>
+        </div>
+    </nav>
+    {% endblock %}
+    {% block content %}
+
+
+    
+    
+    
+    
+    {% endblock %}
 
 </body>
 </html>
