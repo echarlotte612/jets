@@ -1,0 +1,25 @@
+body {
+    background-color: rgb(25, 25, 49);
+    color: white;
+}
+#continent-title{
+    text-align: center;
+    font-size: 3em;
+}
+.continent-sightings {
+    margin: 0 auto;
+    width: 60vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-bottom: solid grey;
+    padding-bottom: 1%;
+}
+.continent-sightings a {
+    text-decoration: none;
+    color: white;
+}
+.continent-sightings a:hover {
+    color: rgb(194, 194, 194);
+}

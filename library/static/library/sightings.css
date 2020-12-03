@@ -1,0 +1,30 @@
+body {
+    background-color: rgb(25, 25, 49);
+    color: white;
+}
+#year-title{
+    text-align: center;
+    font-size: 3em;
+}
+.year-sightings {
+    margin: 0 auto;
+    width: 60vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-bottom: solid grey;
+    padding-bottom: 1%;
+}
+.year-sightings h2 {
+    flex-basis: 50%;
+}
+
+.year-sightings a {
+    text-decoration: none;
+    color: white;
+}
+.year-sightings a:hover {
+    color: rgb(194, 194, 194);
+}

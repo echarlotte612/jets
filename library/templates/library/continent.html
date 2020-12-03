@@ -1,17 +1,19 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block CSS %} {% endblock %}
+{% block CSS %}<link rel="stylesheet" href="{% static 'library/continents.css' %}">{% endblock %}
 {% block title %}DeCryptid | {{ continent }}{% endblock %}
 {% block content %}
 
-<h1>{{ continent }}</h1>
+<h1 id="continent-title">{{ continent }}</h1>
 
 {% for sighting in sightings %}
     <!-- <a href = "{% url 'sightings_continent' sighting.id %}"></a> -->
-    <h1>Location: {{ sighting.location }}</h1>
-    <a href = "{% url 'cryptid_detail' sighting.cryptid.id %}"><h2>{{ sighting.cryptid.name }}</h2></a>
-    <h3>{{ sighting.date }}</h3>
-    <p>{{ sighting.report }}</p>
+    <div class="continent-sightings">
+        <a href = "{% url 'location_detail' sighting.location.id %}"><h1>Location: {{ sighting.location }}</h1></a>
+        <a href = "{% url 'cryptid_detail' sighting.cryptid.id %}"><h2>{{ sighting.cryptid.name }}</h2></a>
+        <a href = "{% url 'sightings_year' sighting.date.year %}"><h3>{{ sighting.date }}</h3></a>
+        <p>{{ sighting.report }}</p>
+    </div>
 {% empty %}
     <p>No sightings yet</p>
 {% endfor %}

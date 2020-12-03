@@ -2,3 +2,6 @@ body{
     background-color: rgb(25, 25, 49);
     color: white;
 }
+* {
+    font-family: 'Major Mono Display', monospace;
+}
