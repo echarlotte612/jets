@@ -35,9 +35,8 @@ def location_detail(request, location_id):
 
 def sightings_continent(request, continent):
     context = {
-        'sightings': Sighting.objects.filter(location__continent__icontains = continent),
-        'location': Location.objects.all(),
-        'cryptid': Cryptid.objects.all()}
+        'continent': continent,
+        'sightings': Sighting.objects.filter(location__continent__icontains = continent)}
     return render(request, 'library/continent.html', context)
 
 def location_sightings(request, location_id):

@@ -1,17 +1,15 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block CSS %} {% endblock %}
-{% block title %}Continent Sightings{% endblock %}
+{% block title %}Continent Sightings | {{ continent }}{% endblock %}
 {% block content %}
 
-<h1>{{ location.continent }}</h1>
-{{ cryptid.name }}
+<h1>{{ continent }}</h1>
 
 {% for sighting in sightings %}
-    <h1>{{ sighting.location.continent }}</h1>
     <!-- <a href = "{% url 'sightings_continent' sighting.id %}"></a> -->
     <h1>Location: {{ sighting.location }}</h1>
-    <h2>{{ sighting.cryptid.name }}</h2>
+    <a href = "{% url 'cryptid_detail' sighting.cryptid.id %}"><h2>{{ sighting.cryptid.name }}</h2></a>
     <h3>{{ sighting.date }}</h3>
     <p>{{ sighting.report }}</p>
 {% empty %}
