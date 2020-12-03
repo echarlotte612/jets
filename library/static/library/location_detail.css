@@ -20,28 +20,28 @@ body {
     flex-direction: column;
     width: 100%;
 }
-.location-description .cryptid_detail_image {
-    height: 10vw;
-
+.location_detail_image {
+    max-width: 200px;
 }
 .location-card {
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    width: 20%;
+    width: 50%;
     padding-bottom: 1%;
     padding-top: 2%;
     border-bottom: solid grey;
 }
 
-.location-card h2 {
-    flex-basis: 100%;
-    height: 0.5vw;
-}
 .location-card img {
     flex-basis: 40%;
 }
 .location-card p {
+    flex-basis: 75%;
+}
+.location-card a {
+    text-decoration: none;
+    color: white;
     flex-basis: 50%;
 }
