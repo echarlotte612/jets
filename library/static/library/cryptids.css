@@ -45,8 +45,8 @@ a {
 a:hover {
     opacity: 0.75;
 }
-h2 {
+.cryptid-name {
     font-size: 3.5vh;
     margin: 0;
-    text-transform: uppercase;
+    text-transform: lowercase;
 }

@@ -1,7 +1,10 @@
 {% extends 'base.html' %}
 {% load static %}
+{% block CSS %}<link rel="stylesheet" href="{% static 'library/404.css' %}">{% endblock %}
 {% block title %}Error_404{% endblock %}
 {% block content %}
-    <h1>404 The cryptid you are searching for doesn't exist... OR DOES IT??</h1>
-    <a href="{% url 'cryptids' %}"><button>back</button></a>
+    <div class = "error-wrapper">
+        <h1>404 The cryptid you are searching for doesn't exist... or does it??</h1>
+        <a href="{% url 'cryptids' %}"><button class = "back">Back to Real Cryptids</button></a>
+    </div>
 {% endblock %}
