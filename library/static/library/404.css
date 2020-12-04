@@ -1,0 +1,15 @@
+.error-wrapper{
+    text-align: center;
+    justify-content: center;
+    background-color: black;
+    margin: 20%;
+    padding: 1%;
+    border-radius: 1em;
+}
+.back{
+    border-radius: 1em;
+    width: 200px;
+    height: 40px;
+    background-color: white;
+    color: rgb(25, 25, 49);
+}
